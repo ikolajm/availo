@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
+import ThemedView from './components/ThemedView';
 
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({ 
@@ -21,5 +22,13 @@ export default function RootLayout() {
     return null; 
   }
 
-  return <Stack onLayout={onLayoutRootView} />;
+  return (<ThemedView onLayout={onLayoutRootView}>
+    <Stack
+      screenOptions={{
+        contentStyle: {
+          backgroundColor: 'transparent',
+        },
+      }} 
+    />
+  </ThemedView>);
 }

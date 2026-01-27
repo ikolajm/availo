@@ -4,17 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:mobile": "npm --prefix apps/mobile start",
-    "dev:api": "npm --prefix services/api run dev",
+    "client": "cd client && npx expo start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "workspaces": [
-    "apps/*",
-    "services/*"
-  ]
+  "type": "commonjs"
 }
