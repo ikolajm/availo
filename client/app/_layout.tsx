@@ -29,6 +29,8 @@ export default function RootLayout() {
           backgroundColor: 'transparent',
         },
       }} 
-    />
+    >
+      <Stack.Screen name="auth" options={{headerShown: false}} />
+    </Stack>
   </ThemedView>);
 }

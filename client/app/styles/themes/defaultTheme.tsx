@@ -34,7 +34,6 @@ defaultThemeObj.colors.neutrals = {
 defaultThemeObj.colors.primary = {
     roles: {
         primary: "#60A5FA",
-        onPrimary: defaultThemeObj.colors.neutrals.roles.onSurface,
         subtle: "#D6E9FF",
         emphasis: "#07264D"
     },
