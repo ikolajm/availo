@@ -27,7 +27,7 @@ const Button = ({leftIcon, rightIcon, size="medium", text="Press Me!", type="pri
 
     return (
         <Pressable
-            style={(pressed) => [buttonStyles, pressed && pressedButtonStyles]}
+            style={({pressed}) => [buttonStyles, pressed && pressedButtonStyles]}
         > 
             {leftIcon && (
                 <Ionicons
