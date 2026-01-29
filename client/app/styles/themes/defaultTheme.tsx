@@ -18,15 +18,15 @@ defaultThemeObj.colors.neutrals = {
         onSurface: {
             hover: "#C5CBD3",
             active: "#B7BEC8",
-            disabled: "rgba(226,229,223,65)",
+            disabled: "rgba(226,229,223,.65)",
         },
         surface1: {
             active: "#2F3132",
-            disbled: "rgba(59,61,62,65)",
+            disbled: "rgba(59,61,62,.65)",
         }, 
         surface2: {
             active: "#393A3D",
-            disabled: "rgba(70,72,75,65)",
+            disabled: "rgba(70,72,75,.65)",
         }, 
     }
 }
@@ -40,7 +40,7 @@ defaultThemeObj.colors.primary = {
     states: {
         hover: "#528CD4",
         active: "#4D84C8",
-        disabled: "rgba(96,165,250,65)"
+        disabled: "rgba(96,165,250,.65)"
     }
 }
 

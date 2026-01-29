@@ -1,17 +1,18 @@
 import { Pressable } from 'react-native'
 import React from 'react'
 import { Ionicons } from "@expo/vector-icons";
-import ButtonStyles from '../styles/components/ButtonStyles';
+import ButtonStyles from '../app/styles/components/ButtonStyles';
 
 import ThemedText from './ThemedText';
 
-const Button = ({leftIcon, rightIcon, size="medium", text="Press Me!", type="primary"}: buttonProps) => {
+const Button = ({leftIcon, rightIcon, onPress, size="medium", style: incomingStyles, text="Press Me!", type="primary"}: buttonProps) => {
     let textStyles: any = {};
     textStyles = ButtonStyles.typography[size];
 
     const buttonStyles: any = {
         borderRadius: ButtonStyles.layout.borderRadius,
-        borderWidth: ButtonStyles.layout.borderWidth
+        borderWidth: ButtonStyles.layout.borderWidth,
+        ...incomingStyles
     };
     buttonStyles.paddingHorizontal = ButtonStyles.spacing[size].xPadding;
     buttonStyles.paddingVertical = ButtonStyles.spacing[size].xPadding;
@@ -27,6 +28,7 @@ const Button = ({leftIcon, rightIcon, size="medium", text="Press Me!", type="pri
 
     return (
         <Pressable
+            onPress={onPress}
             style={({pressed}) => [buttonStyles, pressed && pressedButtonStyles]}
         > 
             {leftIcon && (
@@ -59,7 +61,9 @@ const Button = ({leftIcon, rightIcon, size="medium", text="Press Me!", type="pri
 interface buttonProps {
     leftIcon?: any,
     rightIcon?: any,
+    onPress: () => void,
     size?: string,
+    style?: any,
     text?: string,
     type?: string
 }

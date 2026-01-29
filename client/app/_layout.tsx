@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
-import ThemedView from './components/ThemedView';
+import ThemedView from '../components/ThemedView';
 
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({ 
@@ -30,7 +30,13 @@ export default function RootLayout() {
         },
       }} 
     >
-      <Stack.Screen name="auth" options={{headerShown: false}} />
+      <Stack.Screen name="auth/login" options={{headerShown: false}} />
+      <Stack.Screen name="auth/register" options={{headerShown: false}} />
+      {/* <Stack.Screen name="screens/auth/RegisterSteps/AccountInformation" options={{headerShown: false}} />
+      <Stack.Screen name="screens/auth/RegisterSteps/UserInformation" options={{headerShown: false}} />
+      <Stack.Screen name="screens/auth/RegisterSteps/UserLocation" options={{headerShown: false}} />
+      <Stack.Screen name="screens/auth/RegisterSteps/UserInterestReview" options={{headerShown: false}} />
+      <Stack.Screen name="screens/auth/RegisterSteps/UserInterestSelection" options={{headerShown: false}} /> */}
     </Stack>
   </ThemedView>);
 }

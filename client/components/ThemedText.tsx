@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
 import React, { ReactNode } from 'react'
-import DefaultTheme from '../styles/themes/defaultTheme'
+import DefaultTheme from '../app/styles/themes/defaultTheme'
 
 const ThemedText = ({incomingStyles, ...props}: ThemedTextProps) => {
     const defaultOnSurface = DefaultTheme.colors.neutrals.roles.onSurface;

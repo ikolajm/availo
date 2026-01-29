@@ -47,7 +47,7 @@ layoutObj.borderWidth = {
 
 layoutObj.dividers = {
     borderWidth: layoutObj.borderWidth.bw1,
-    outline: "rgba(101,104,108,15)"
+    outline: "rgba(101,104,108,.15)"
 }
 
 const Layout = StyleSheet.create(layoutObj);

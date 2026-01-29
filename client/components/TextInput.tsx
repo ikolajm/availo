@@ -1,18 +1,20 @@
-import { TextInput as Input, View } from 'react-native';
+import { TextInput as Input, KeyboardTypeOptions, View } from 'react-native';
 import React, { useState } from 'react';
-import Typography from '../styles/typography';
-import DefaultTheme from '../styles/themes/defaultTheme';
+import Typography from '../app/styles/typography';
+import DefaultTheme from '../app/styles/themes/defaultTheme';
 import ThemedText from './ThemedText';
-import { default as InputStyles } from '../styles/components/TextInputStyles';
+import { default as InputStyles } from '../app/styles/components/TextInputStyles';
 
 interface InputProps {
+  keyboardType?: KeyboardTypeOptions,
   label: string,
-  placeholder: string
+  placeholder: string,
+  value: string,
+  onChange: (value: string) => void
+  secureTextEntry?: boolean
 }
 
-const TextInput = ({label, placeholder}: InputProps) => {
-  const [text, updateText] = useState("");
-
+const TextInput = ({keyboardType, label, placeholder, value, onChange, secureTextEntry=false}: InputProps) => {
   const labelStyles = {
     ...Typography.presets.preset5.header
   }
@@ -36,11 +38,13 @@ const TextInput = ({label, placeholder}: InputProps) => {
     <View>
       <ThemedText incomingStyles={{...labelStyles}}>{label}:</ThemedText>
       <Input
-        style={[inputStyles]}
-        onChangeText={updateText}
-        value={text}
+        style={[{...inputStyles}]}
+        onChangeText={onChange}
+        value={value}
         placeholder={placeholder}
         placeholderTextColor={DefaultTheme.colors.neutrals.roles.onSurfaceSubtle}
+        keyboardType={keyboardType ? keyboardType : "default"}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   )

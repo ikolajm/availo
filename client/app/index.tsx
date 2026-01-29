@@ -1,8 +1,7 @@
 import Typography from "./styles/typography";
-import ThemedText from "./components/ThemedText";
+import ThemedText from "../components/ThemedText";
 import { View } from "react-native";
-import TextInput from "./components/TextInput";
-import Button from "./components/Button";
+import ThemedLink from "../components/ThemedLink";
 
 export default function Index() {
   const contentPreset1 = Typography.presets.preset1.content;
@@ -16,8 +15,8 @@ export default function Index() {
       >
         Yoooooo!
       </ThemedText>
-      <TextInput label="Test" placeholder="Type in me!" />
-      <Button  size="medium" text="Press me!" />
+      <ThemedLink href="/auth/login">Login</ThemedLink>
+      <ThemedLink href={"/auth/register"}>Register</ThemedLink>
     </View>
   );
 }

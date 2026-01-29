@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import Layout from '../styles/layout';
+import Layout from '../app/styles/layout';
 
-import defaultTheme from '../styles/themes/defaultTheme';
+import defaultTheme from '../app/styles/themes/defaultTheme';
 const backgroundColor = defaultTheme.colors.neutrals.roles.surface;
 const color = defaultTheme.colors.neutrals.roles.onSurface;
 const screenSpacing = Layout.spacing.screen;
