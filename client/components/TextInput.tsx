@@ -1,9 +1,9 @@
 import { TextInput as Input, KeyboardTypeOptions, View } from 'react-native';
 import React, { useState } from 'react';
-import Typography from '../app/styles/typography';
-import DefaultTheme from '../app/styles/themes/defaultTheme';
+import Typography from '../styles/typography';
+import DefaultTheme from '../styles/themes/defaultTheme';
 import ThemedText from './ThemedText';
-import { default as InputStyles } from '../app/styles/components/TextInputStyles';
+import { default as InputStyles } from '../styles/components/TextInputStyles';
 
 interface InputProps {
   keyboardType?: KeyboardTypeOptions,

@@ -4,10 +4,10 @@ import Logo from '@/components/Logo'
 import Divider from '@/components/Divider'
 import TextInput from '@/components/TextInput'
 import Button from '@/components/Button'
-import ButtonGroupStyles from '@/app/styles/groups/ButtonGroupStyles'
+import ButtonGroupStyles from '@/styles/groups/ButtonGroupStyles'
 import ThemedText from '@/components/ThemedText'
 import ThemedLink from '@/components/ThemedLink'
-import FormStyles from '../styles/components/FormStyles'
+import FormStyles from '../../styles/components/FormStyles'
 
 const Login = () => {
     const [email, setEmail] = useState('');

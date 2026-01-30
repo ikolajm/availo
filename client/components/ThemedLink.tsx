@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Link } from 'expo-router';
-import LinkStyles from '../app/styles/components/LinkStyles';
+import LinkStyles from '../styles/components/LinkStyles';
 
 const ThemedLink = ({children, href, incomingStyles, ...props}: ThemedLinkProps) => {
     return (

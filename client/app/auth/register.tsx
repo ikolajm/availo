@@ -6,6 +6,7 @@ import ThemedText from '@/components/ThemedText'
 import ThemedLink from '@/components/ThemedLink'
 import AccountInformation from '@/components/register_steps/AccountInformation'
 import ScreenLevelHeader from '@/components/headers/ScreenLevelHeader'
+import UserInformation from '@/components/register_steps/UserInformation'
 
 const Register = () => {
   const [step, updateStep] = useState(0);
@@ -22,6 +23,14 @@ const Register = () => {
   const updateFormField = (key: string, value: any) => {
     updateForm((prev: any) => ({ ...prev, [key]: value }))
   }
+
+  const totalSteps = 3; // Zero indexed
+  const handleNext = () => {
+    updateStep(prevStep => Math.min(prevStep + 1, totalSteps));
+  };
+  const handlePrevious = () => {
+    updateStep(prevStep => Math.max(prevStep - 1, 0));
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -48,7 +57,23 @@ const Register = () => {
           subtitle={getHeaderSubtitle(step)}
         />
         <Divider />
-        {step === 0 && <AccountInformation step={step} form={form} updateFormField={updateFormField} />}
+        {step === 0 && (
+          <AccountInformation 
+            step={step} 
+            form={form} 
+            updateFormField={updateFormField} 
+            handleNext={handleNext}
+          />
+        )}
+        {step === 1 && (
+          <UserInformation 
+            step={step} 
+            form={form} 
+            updateFormField={updateFormField} 
+            handleNext={handleNext}
+            handlePrev={handlePrevious}
+          />
+        )}
         <Divider />
         <View style={[{...authFooterStyles}]}>
             <ThemedText>Have an account?</ThemedText>
@@ -83,6 +108,9 @@ const getHeaderTitle = (step: number) => {
   let string;
 
   switch(step) {
+    case 1:
+      string = "(2/4) User Information";
+      break;
     default:
       string = "(1/4) Account Information"
   }
@@ -94,6 +122,9 @@ const getHeaderSubtitle = (step: number) => {
   let string;
 
   switch(step) {
+    case 1:
+      string = "This will help other users find you!";
+      break;
     default:
       string = "This is for your eyes only."
   }

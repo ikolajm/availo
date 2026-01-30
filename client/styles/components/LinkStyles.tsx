@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import DefaultTheme from '../..//styles/themes/defaultTheme';
+import DefaultTheme from '../themes/defaultTheme';
 
 const primary = DefaultTheme.colors.primary;
 const linkStyleObj: any = {

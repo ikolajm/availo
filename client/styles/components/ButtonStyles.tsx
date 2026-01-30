@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
-import DefaultTheme from '../..//styles/themes/defaultTheme';
-import Layout from '../../styles/layout';
-import Icons from '../../styles/icons';
-import Typography from '../../styles/typography';
+import DefaultTheme from '../themes/defaultTheme';
+import Layout from '../layout';
+import Icons from '../icons';
+import Typography from '../typography';
 
 const primary = DefaultTheme.colors.primary;
 const neutral = DefaultTheme.colors.neutrals;

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import DefaultTheme from '../..//styles/themes/defaultTheme';
-import Layout from '../../styles/layout';
-import Typography from '../../styles/typography';
+import DefaultTheme from '../themes/defaultTheme';
+import Layout from '../layout';
+import Typography from '../typography';
 
 const neutrals = DefaultTheme.colors.neutrals;
 const inputStyleObj: any = {

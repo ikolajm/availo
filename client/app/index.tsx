@@ -1,4 +1,4 @@
-import Typography from "./styles/typography";
+import Typography from "../styles/typography";
 import ThemedText from "../components/ThemedText";
 import { View } from "react-native";
 import ThemedLink from "../components/ThemedLink";

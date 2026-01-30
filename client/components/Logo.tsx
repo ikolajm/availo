@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'react-native'
 import React from 'react'
-import DefaultTheme from '../app/styles/themes/defaultTheme'
-import Typography from '../app/styles/typography'
+import DefaultTheme from '../styles/themes/defaultTheme'
+import Typography from '../styles/typography'
 
 const Logo = ({logoWidth, logoHeight, flexDirection, gap, typographyPreset, typographyType, text}: LogoProps) => {
     const containerStyles: any = {

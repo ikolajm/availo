@@ -1,7 +1,7 @@
 import { Pressable } from 'react-native'
 import React from 'react'
 import { Ionicons } from "@expo/vector-icons";
-import ButtonStyles from '../app/styles/components/ButtonStyles';
+import ButtonStyles from '../styles/components/ButtonStyles';
 
 import ThemedText from './ThemedText';
 

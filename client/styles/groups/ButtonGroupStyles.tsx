@@ -6,7 +6,8 @@ const buttonGroupStylesObj: any = {
         gap: 16
     },
     layout: {
-        alignSelf: "flex-start"
+        alignSelf: "flex-start",
+        flexDirection: "row",
     }
 }
 

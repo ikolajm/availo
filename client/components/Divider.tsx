@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Layout from '../app/styles/layout'
+import Layout from '../styles/layout'
 
 const Divider = () => {
   const dividerStyles: any = {

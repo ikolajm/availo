@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ThemedText from '../ThemedText'
-import Typography from '@/app/styles/typography'
-import DefaultTheme from '@/app/styles/themes/defaultTheme'
+import Typography from '@/styles/typography'
+import DefaultTheme from '@/styles/themes/defaultTheme'
 
 interface ScreenLevelHeaderProps {
     alignSelf?: string,

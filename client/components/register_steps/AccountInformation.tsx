@@ -1,18 +1,41 @@
 import { View } from 'react-native'
 import React from 'react'
-import FormStyles from '@/app/styles/components/FormStyles'
+import FormStyles from '@/styles/components/FormStyles'
 import TextInput from '@/components/TextInput'
 import Button from '../Button'
-import ButtonGroupStyles from '@/app/styles/groups/ButtonGroupStyles'
+import ButtonGroupStyles from '@/styles/groups/ButtonGroupStyles'
 
 interface AccountInformationProps {
   step: number,
   form: any,
-  updateFormField: (key: string, value: any) => void
+  updateFormField: (key: string, value: any) => void,
+  handleNext: () => void
 }
 
-const AccountInformation = ({step, form, updateFormField}: AccountInformationProps) => {
+const validateAccountInformation = (form: any): boolean => {
+  // const {password, confirmPassword} = form;
+  // if (password.length < 5) {
+  //   return false;
+  // }
+
+  // if (password !== confirmPassword) {
+  //   return false;
+  // }
+
+  return true;
+}
+
+const AccountInformation = ({step, form, updateFormField, handleNext}: AccountInformationProps) => {
   const { email, password, confirmPassword } = form;
+
+  const handleOnPress = () => {
+    const valid: boolean = validateAccountInformation(form);
+    if (!valid) {
+      console.log("BAD!")
+    } else {
+      handleNext();
+    }
+  }
 
   return (
     <View style={[{...formStyles}]}>
@@ -39,7 +62,7 @@ const AccountInformation = ({step, form, updateFormField}: AccountInformationPro
       />
       <View style={[{...buttonGroupStyles}]}>
         <Button
-          onPress={() => console.log('yay')}
+          onPress={() => handleOnPress()}
           type="primary"
           size="medium"
           text="Next"
