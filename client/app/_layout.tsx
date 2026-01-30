@@ -28,15 +28,10 @@ export default function RootLayout() {
         contentStyle: {
           backgroundColor: 'transparent',
         },
-      }} 
+      }}
     >
       <Stack.Screen name="auth/login" options={{headerShown: false}} />
       <Stack.Screen name="auth/register" options={{headerShown: false}} />
-      {/* <Stack.Screen name="screens/auth/RegisterSteps/AccountInformation" options={{headerShown: false}} />
-      <Stack.Screen name="screens/auth/RegisterSteps/UserInformation" options={{headerShown: false}} />
-      <Stack.Screen name="screens/auth/RegisterSteps/UserLocation" options={{headerShown: false}} />
-      <Stack.Screen name="screens/auth/RegisterSteps/UserInterestReview" options={{headerShown: false}} />
-      <Stack.Screen name="screens/auth/RegisterSteps/UserInterestSelection" options={{headerShown: false}} /> */}
     </Stack>
   </ThemedView>);
 }

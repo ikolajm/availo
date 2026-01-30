@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 const buttonGroupStylesObj: any = {
     spacing: {
         marginTop: 8,
-        xGap: 16
+        gap: 16
     },
     layout: {
         alignSelf: "flex-start"

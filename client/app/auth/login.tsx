@@ -7,6 +7,7 @@ import Button from '@/components/Button'
 import ButtonGroupStyles from '@/app/styles/groups/ButtonGroupStyles'
 import ThemedText from '@/components/ThemedText'
 import ThemedLink from '@/components/ThemedLink'
+import FormStyles from '../styles/components/FormStyles'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -89,8 +90,8 @@ const screenStyles: any = {
 //     left: "55%"
 // }
 const formStyles: any = {
-    width: "100%",
-    gap: 8
+    gap: FormStyles.spacing.gap,
+    width: FormStyles.sizing.width,
 }
 const buttonGroupStyles: any = {
     alignSelf: ButtonGroupStyles.layout.alignSelf,
