@@ -15,8 +15,8 @@ export default function Index() {
       >
         Yoooooo!
       </ThemedText>
-      <ThemedLink href="/auth/login">Login</ThemedLink>
-      <ThemedLink href={"/auth/register"}>Register</ThemedLink>
+      <ThemedLink href="/login">Login</ThemedLink>
+      <ThemedLink href={"/register"}>Register</ThemedLink>
     </View>
   );
 }

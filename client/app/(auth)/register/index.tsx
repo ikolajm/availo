@@ -1,5 +1,5 @@
 import { Keyboard, TouchableWithoutFeedback, View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import Logo from '@/components/Logo'
 import Divider from '@/components/Divider'
 import ThemedText from '@/components/ThemedText'
@@ -7,30 +7,19 @@ import ThemedLink from '@/components/ThemedLink'
 import AccountInformation from '@/components/register_steps/AccountInformation'
 import ScreenLevelHeader from '@/components/headers/ScreenLevelHeader'
 import UserInformation from '@/components/register_steps/UserInformation'
+import { RegistrationForm, useRegistrationFormContext } from '@/context/RegistrationContext'
 
 const Register = () => {
-  const [step, updateStep] = useState(0);
-  const [form, updateForm] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-    displayName: "",
-    username: "",
-    location: "",
-    interests: []
-  });
+  const { form, setForm } = useRegistrationFormContext();
+  const { step } = form;
+  console.log("FORM", form);
 
-  const updateFormField = (key: string, value: any) => {
-    updateForm((prev: any) => ({ ...prev, [key]: value }))
+  function updateFormField<K extends keyof RegistrationForm>(
+    key: K,
+    value: RegistrationForm[K]
+  ) {
+    setForm(prev => ({ ...prev, [key]: value }));
   }
-
-  const totalSteps = 3; // Zero indexed
-  const handleNext = () => {
-    updateStep(prevStep => Math.min(prevStep + 1, totalSteps));
-  };
-  const handlePrevious = () => {
-    updateStep(prevStep => Math.max(prevStep - 1, 0));
-  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -61,23 +50,20 @@ const Register = () => {
           <AccountInformation 
             step={step} 
             form={form} 
-            updateFormField={updateFormField} 
-            handleNext={handleNext}
+            updateFormField={updateFormField}
           />
         )}
-        {step === 1 && (
+        {/* {step === 1 && (
           <UserInformation 
             step={step} 
             form={form} 
-            updateFormField={updateFormField} 
-            handleNext={handleNext}
-            handlePrev={handlePrevious}
+            updateFormField={updateFormField}
           />
-        )}
+        )} */}
         <Divider />
         <View style={[{...authFooterStyles}]}>
             <ThemedText>Have an account?</ThemedText>
-            <ThemedLink href="/auth/login">Login now!</ThemedLink>
+            <ThemedLink href="/login">Login now!</ThemedLink>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -111,6 +97,12 @@ const getHeaderTitle = (step: number) => {
     case 1:
       string = "(2/4) User Information";
       break;
+    case 2:
+      string = "(3/4) User Location";
+      break;
+    case 3:
+      string = "(4/4) User Interests";
+      break;
     default:
       string = "(1/4) Account Information"
   }
@@ -124,6 +116,12 @@ const getHeaderSubtitle = (step: number) => {
   switch(step) {
     case 1:
       string = "This will help other users find you!";
+      break;
+    case 2:
+      string = "Help us provide events in your area!";
+      break;
+    case 3:
+      string = "Choose up to 5 interests for your profile.";
       break;
     default:
       string = "This is for your eyes only."

@@ -22,11 +22,6 @@ const Login = () => {
             <View
                 style={[{...screenStyles}]}
             >
-                {/* <Image
-                    source={require("@/assets/images/availo.png")}
-                    style={[{...blurredLogoStyles}]}
-                    blurRadius={2}
-                /> */}
                 <Logo
                     flexDirection="column"
                     gap={8}
@@ -66,7 +61,7 @@ const Login = () => {
                 <Divider />
                 <View style={[{...authFooterStyles}]}>
                     <ThemedText>Need an account?</ThemedText>
-                    <ThemedLink href="/auth/register">Register now!</ThemedLink>
+                    <ThemedLink href="/register">Register now!</ThemedLink>
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -82,13 +77,6 @@ const screenStyles: any = {
     alignItems: "center",
     justifyContent: "center",
 }
-// const blurredLogoStyles: any = {
-//     position: "absolute",
-//     opacity: .1,
-//     width: "100%",
-//     height: "100%",
-//     left: "55%"
-// }
 const formStyles: any = {
     gap: FormStyles.spacing.gap,
     width: FormStyles.sizing.width,

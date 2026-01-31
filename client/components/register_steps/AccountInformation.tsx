@@ -4,23 +4,19 @@ import FormStyles from '@/styles/components/FormStyles'
 import TextInput from '@/components/TextInput'
 import Button from '../Button'
 import ButtonGroupStyles from '@/styles/groups/ButtonGroupStyles'
+import { RegistrationForm } from '@/context/RegistrationContext'
 
 interface AccountInformationProps {
   step: number,
-  form: any,
-  updateFormField: (key: string, value: any) => void,
-  handleNext: () => void
+  form: RegistrationForm;
+  updateFormField: <K extends keyof RegistrationForm>(
+    key: K,
+    value: RegistrationForm[K]
+  ) => void;
+  handleNext?: () => void
 }
 
 const validateAccountInformation = (form: any): boolean => {
-  // const {password, confirmPassword} = form;
-  // if (password.length < 5) {
-  //   return false;
-  // }
-
-  // if (password !== confirmPassword) {
-  //   return false;
-  // }
 
   return true;
 }
@@ -33,7 +29,7 @@ const AccountInformation = ({step, form, updateFormField, handleNext}: AccountIn
     if (!valid) {
       console.log("BAD!")
     } else {
-      handleNext();
+      // handleNext();
     }
   }
 

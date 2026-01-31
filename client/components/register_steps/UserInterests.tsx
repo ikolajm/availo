@@ -5,7 +5,7 @@ import TextInput from '@/components/TextInput'
 import Button from '../Button'
 import ButtonGroupStyles from '@/styles/groups/ButtonGroupStyles'
 
-interface UserInformationProps {
+interface UserInterestProps {
   step: number,
   form: any,
   updateFormField: (key: string, value: any) => void,
@@ -13,16 +13,16 @@ interface UserInformationProps {
   handlePrev: () => void
 }
 
-const validateUserInformation = (form: any): boolean => {
+const validateUserInterests = (form: any): boolean => {
 
   return true;
 }
 
-const UserInformation = ({step, form, updateFormField, handleNext, handlePrev}: UserInformationProps) => {
-  const { displayName, username } = form;
+const UserInterests = ({step, form, updateFormField, handleNext, handlePrev}: UserInterestProps) => {
+  const { interests } = form;
 
   const handleOnNextPress = () => {
-    const valid: boolean = validateUserInformation(form);
+    const valid: boolean = validateUserInterests(form);
     if (!valid) {
       console.log("BAD!")
     } else {
@@ -32,18 +32,12 @@ const UserInformation = ({step, form, updateFormField, handleNext, handlePrev}: 
 
   return (
     <View style={[{...formStyles}]}>
-      <TextInput 
-        label="Display Name" 
-        placeholder='Placeholder' 
-        value={displayName}
-        onChange={(value) => updateFormField("displayName", value)}
-      />
-      <TextInput 
-          label="Username" 
-          placeholder='Username'
-          value={username}
-          onChange={(value) => updateFormField("username", value)}
-      />
+      {/* <TextInput 
+        label="Location" 
+        placeholder='City, State' 
+        value={location}
+        onChange={(value) => updateFormField("location", value)}
+      /> */}
       <View style={[{...buttonGroupStyles}]}>
         <Button
           onPress={handlePrev}
@@ -55,7 +49,7 @@ const UserInformation = ({step, form, updateFormField, handleNext, handlePrev}: 
           onPress={() => handleOnNextPress()}
           type="primary"
           size="medium"
-          text="Next"
+          text="Review"
         />
       </View>
     </View>
@@ -73,4 +67,4 @@ const buttonGroupStyles: any = {
     marginTop: ButtonGroupStyles.spacing.marginTop,
 }
 
-export default UserInformation;
+export default UserInterests;
